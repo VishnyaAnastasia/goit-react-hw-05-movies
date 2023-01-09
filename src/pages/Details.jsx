@@ -22,8 +22,6 @@ const Details = () => {
     });
   }, [id, navigate]);
 
-  const location = useLocation();
-
   return (
     <Section>
       <Film film={film} />
