@@ -1,4 +1,4 @@
-.filmsList {
+.actorsList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,9 +8,9 @@
   min-height: 600px;
 }
 
-.films {
+.actors {
   position: relative;
-  width: 280px;
+  width: 150px;
   height: 100%;
   border-radius: 5px;
   background-color: white;
@@ -18,19 +18,18 @@
   cursor: pointer;
 }
 
-.films:hover,
-.films:focus {
+.actors:hover,
+.actors:focus {
   box-shadow: 8px 12px 14px 2px rgba(71, 71, 71, 0.6);
 }
 
-.filmCover {
+.actorPhoto {
   position: relative;
   width: 100%;
-  height: 398px;
   border-radius: 5px;
 }
 
-.filmCard {
+.actorCard {
   height: 100%;
   padding-left: 5px;
   padding-right: 5px;
@@ -38,68 +37,49 @@
   padding-bottom: 10px;
 }
 
-.filmTitle {
+.actorName {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.33;
   color: #000000;
 }
 
-.filmRating {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  width: 36px;
-  height: 16px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.16;
-  background-color: #8ddfff;
-  color: white;
-}
-
 @media screen and (min-width: 768px) {
-  .filmsList {
+  .actorsList {
     gap: 32px;
     margin-top: 60px;
     margin-bottom: 60px;
   }
 
-  .films {
-    width: 336px;
+  .actors {
+    width: 213px;
+    height: 100%;
   }
 
-  .filmCover {
-    height: 478px;
+  .actorPhoto {
+    height: 100%;
   }
 
-  .filmTitle {
+  .actorName {
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .filmsList {
-    gap: 32px;
+  .actorsList {
+    gap: 20px;
   }
 
-  .films {
-    width: 280px;
+  .actors {
+    width: 200px;
+    /* height: 100%; */
+  }
+
+  /* .actorPhoto {
     height: 100%;
-  }
+  } */
 
-  .filmCover {
-    height: 398px;
-  }
-
-  .filmTitle {
+  .actorName {
     font-size: 16px;
-  }
-
-  .filmRating {
-    width: 40px;
-    height: 20px;
   }
 }

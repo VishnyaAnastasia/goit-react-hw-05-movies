@@ -5,7 +5,7 @@ import { Nav } from './Nav/Nav';
 import Loader from './Loader/Loader';
 
 const Tranding = lazy(() => import('../pages/Tranding'));
-const Search = lazy(() => import('../pages/Tranding'));
+const Search = lazy(() => import('../pages/Search'));
 const Details = lazy(() => import('../pages/Details'));
 const Cast = lazy(() => import('../pages/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews'));

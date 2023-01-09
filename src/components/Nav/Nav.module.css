@@ -1,0 +1,9 @@
+.navList {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  font-size: 20px;
+  font-weight: 700;
+}

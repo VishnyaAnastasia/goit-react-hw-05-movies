@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 
 import { fetchDetails } from 'utils/fetchAPI';
+import { Film } from 'components/Film/Film';
 
 import { Section } from 'components/Section/Section';
 
@@ -31,25 +32,8 @@ const Details = () => {
 
   return (
     <Section>
-      {film && (
-        <>
-          <p>{film.title}</p>
-          <Link
-            state={{ from: location.state ? location.state.from : '/' }}
-            to={`/search/${film.id}/cast`}
-          >
-            Cast
-          </Link>
-          <Link
-            state={{ from: location.state ? location.state.from : '/' }}
-            to={`/search/${film.id}/reviews`}
-          >
-            Reviews
-          </Link>
-        </>
-      )}
+      <Film film={film} />
       <Outlet />
-      <Link to={location.state ? location.state.from : '/'}>Back</Link>
     </Section>
   );
 };

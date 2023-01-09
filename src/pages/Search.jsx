@@ -1,9 +1,20 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { FilmsList } from 'components/FilmsList/FilmsList';
 
+import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Section } from 'components/Section/Section';
 import { fetchSearch } from 'utils/fetchAPI';
+
+Notify.init({
+  useIcon: false,
+  fontSize: '20px',
+  position: 'right-top',
+  width: '350px',
+  height: '35px',
+  clickToClose: true,
+});
 
 const Search = () => {
   const [films, setFilms] = useState(null);
@@ -17,6 +28,7 @@ const Search = () => {
     }
     fetchSearch(query).then(response => {
       if (response.data.results.length === 0) {
+        Notify.warning('Oppps.. bad query');
         navigate('/search');
         return;
       }
@@ -35,11 +47,8 @@ const Search = () => {
   };
 
   return (
-    <Section title="Search">
-      <form onSubmit={handlerSubmit}>
-        <input type="text" name="query" />
-        <button>Search</button>
-      </form>
+    <Section>
+      <SearchForm handlerSubmit={handlerSubmit} />
       <FilmsList films={films} />
     </Section>
   );

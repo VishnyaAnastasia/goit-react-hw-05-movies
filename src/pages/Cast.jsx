@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { fetchCast } from 'utils/fetchAPI';
+import { Actors } from 'components/Actors/Actors';
 
 const Cast = () => {
   const { id } = useParams();
@@ -11,16 +12,6 @@ const Cast = () => {
     fetchCast(id).then(response => setCast(response.data.cast));
   }, [id]);
 
-  return (
-    cast && (
-      <ul>
-        {cast.map(actor => (
-          <li key={actor.id}>
-            <p>{actor.name}</p>
-          </li>
-        ))}
-      </ul>
-    )
-  );
+  return <Actors cast={cast} />;
 };
 export default Cast;

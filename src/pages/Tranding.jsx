@@ -12,7 +12,7 @@ const Tranding = () => {
   }, []);
 
   return (
-    <Section title="Tranding">
+    <Section title="Popular Today">
       <FilmsList films={films} />
     </Section>
   );
