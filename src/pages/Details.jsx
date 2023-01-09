@@ -1,11 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  Link,
-  useParams,
-  Outlet,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import { fetchDetails } from 'utils/fetchAPI';
 import { Film } from 'components/Film/Film';
