@@ -35,11 +35,14 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
+
+  height: 200px;
+  overflow-y: auto;
 }
 
 .filmInfoMore {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 20px;
   font-size: 20px;
   font-weight: 700;
@@ -47,15 +50,44 @@
   background-color: #8ddfff;
 }
 
-.btnBack {
-  font-size: 20px;
+.filmLinkMore {
+  font-size: 25px;
   font-weight: 700;
+  color: #ffffff;
 }
+
+.filmLinkMore:hover,
+.filmLinkMore:focus {
+  color: #ffc0cb;
+}
+
+.btnSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  margin-left: 20px;
+  width: 280px;
+}
+.btnBack {
+  font-size: 25px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.btnBack:hover,
+.btnBack:focus {
+  color: #8ddfff;
+}
+
 @media screen and (min-width: 768px) {
   .filmCard {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 704px;
+  }
+  .btnSection {
     width: 704px;
   }
 

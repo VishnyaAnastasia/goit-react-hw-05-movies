@@ -5,16 +5,18 @@ import { FilmsList } from 'components/FilmsList/FilmsList';
 import { fetchTrending } from 'utils/fetchAPI';
 
 const Tranding = () => {
-  const [films, setFilms] = useState(null);
+  const [films, setFilms] = useState([]);
 
   useEffect(() => {
     fetchTrending().then(response => setFilms(response.data.results));
   }, []);
 
   return (
-    <Section title="Popular Today">
-      <FilmsList films={films} />
-    </Section>
+    films && (
+      <Section title="Popular Today">
+        <FilmsList films={films} />
+      </Section>
+    )
   );
 };
 

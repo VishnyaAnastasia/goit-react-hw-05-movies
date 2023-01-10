@@ -6,16 +6,22 @@ export const Nav = () => {
   return (
     <header>
       <Section>
-        <nav>
-          <ul className={styles.navList}>
-            <li className={styles.navLink}>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li className={styles.navLink}>
-              <NavLink to="/search">Films</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <div className={styles.backLine}>
+          <nav>
+            <ul className={styles.navList}>
+              <li>
+                <NavLink className={styles.navLink} to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={styles.navLink} to="/search">
+                  Films
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </Section>
     </header>
   );

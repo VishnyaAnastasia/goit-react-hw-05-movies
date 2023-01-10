@@ -1,21 +1,19 @@
 import styles from './Feedback.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const Feedback = ({ reviews }) => {
   return (
-    reviews && (
-      <ul className={styles.feedbackList}>
-        {reviews.map(review => (
-          <li className={styles.feedbacCard} key={review.id}>
-            <p className={styles.feedbackAuthor}>{review.author}</p>
-            <p className={styles.feedbackContent}>{review.content}</p>
-          </li>
-        ))}
-      </ul>
-    )
+    <ul className={styles.feedbackList}>
+      {reviews.map(review => (
+        <li className={styles.feedbacCard} key={review.id}>
+          <p className={styles.feedbackAuthor}>{review.author}</p>
+          <p className={styles.feedbackContent}>{review.content}</p>
+        </li>
+      ))}
+    </ul>
   );
 };
 
-// Feedback.propTypes = {
-//   reviews: PropTypes.array.isRequired,
-// };
+Feedback.propTypes = {
+  reviews: PropTypes.array.isRequired,
+};

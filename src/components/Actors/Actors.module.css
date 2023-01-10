@@ -15,7 +15,6 @@
   border-radius: 5px;
   background-color: white;
   transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
 }
 
 .actors:hover,
@@ -72,12 +71,7 @@
 
   .actors {
     width: 200px;
-    /* height: 100%; */
   }
-
-  /* .actorPhoto {
-    height: 100%;
-  } */
 
   .actorName {
     font-size: 16px;

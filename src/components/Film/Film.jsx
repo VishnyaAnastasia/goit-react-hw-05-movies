@@ -1,16 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './Film.module.css';
 
 export const Film = ({ film }) => {
   const location = useLocation();
 
   return (
-    film && (
-      <>
-        <div className={styles.btnBack}>
-          <Link to={location.state ? location.state.from : '/'}>Back</Link>
-        </div>
+    <>
+      <div className={styles.btnSection}>
+        <Link
+          className={styles.btnBack}
+          to={location.state ? location.state.from : '/'}
+        >
+          Back
+        </Link>
+
         <section className={styles.filmCard}>
           <img
             className={styles.filmCover}
@@ -28,12 +32,14 @@ export const Film = ({ film }) => {
             </div>
             <div className={styles.filmInfoMore}>
               <Link
+                className={styles.filmLinkMore}
                 state={{ from: location.state ? location.state.from : '/' }}
                 to={`/search/${film.id}/cast`}
               >
                 Cast
               </Link>
               <Link
+                className={styles.filmLinkMore}
                 state={{ from: location.state ? location.state.from : '/' }}
                 to={`/search/${film.id}/reviews`}
               >
@@ -42,11 +48,11 @@ export const Film = ({ film }) => {
             </div>
           </div>
         </section>
-      </>
-    )
+      </div>
+    </>
   );
 };
 
-// Film.propTypes = {
-//   film: PropTypes.element.isRequired,
-// };
+Film.propTypes = {
+  film: PropTypes.object.isRequired,
+};

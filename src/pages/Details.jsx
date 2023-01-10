@@ -10,7 +10,7 @@ const Details = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [film, setFilm] = useState(null);
+  const [film, setFilm] = useState({});
 
   useEffect(() => {
     fetchDetails(id).then(response => {
@@ -23,10 +23,12 @@ const Details = () => {
   }, [id, navigate]);
 
   return (
-    <Section>
-      <Film film={film} />
-      <Outlet />
-    </Section>
+    film && (
+      <Section>
+        <Film film={film} />
+        <Outlet />
+      </Section>
+    )
   );
 };
 export default Details;

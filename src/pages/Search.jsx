@@ -17,7 +17,7 @@ Notify.init({
 });
 
 const Search = () => {
-  const [films, setFilms] = useState(null);
+  const [films, setFilms] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('search');
   const navigate = useNavigate();
@@ -47,10 +47,12 @@ const Search = () => {
   };
 
   return (
-    <Section>
-      <SearchForm handlerSubmit={handlerSubmit} />
-      <FilmsList films={films} />
-    </Section>
+    films && (
+      <Section>
+        <SearchForm handlerSubmit={handlerSubmit} />
+        <FilmsList films={films} />
+      </Section>
+    )
   );
 };
 
