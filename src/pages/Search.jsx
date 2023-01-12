@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { FilmsList } from 'components/FilmsList/FilmsList';
 
 import { SearchForm } from 'components/SearchForm/SearchForm';
