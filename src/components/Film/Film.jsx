@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Film.module.css';
+import { Section } from 'components/Section/Section';
 
 export const Film = ({ film }) => {
   const location = useLocation();
 
-  return (
+  return film.title ? (
     <>
       <div className={styles.btnSection}>
         <Link className={styles.btnBack} to={location.state?.from ?? '/'}>
@@ -30,14 +31,14 @@ export const Film = ({ film }) => {
             <div className={styles.filmInfoMore}>
               <Link
                 className={styles.filmLinkMore}
-                state={{ from: location.state ? location.state.from : '/' }}
+                state={{ from: location?.state?.from ?? '/' }}
                 to={`/search/${film.id}/cast`}
               >
                 Cast
               </Link>
               <Link
                 className={styles.filmLinkMore}
-                state={{ from: location.state ? location.state.from : '/' }}
+                state={{ from: location?.state?.from ?? '/' }}
                 to={`/search/${film.id}/reviews`}
               >
                 Reviews
@@ -47,6 +48,8 @@ export const Film = ({ film }) => {
         </section>
       </div>
     </>
+  ) : (
+    <Section title="No film found" />
   );
 };
 

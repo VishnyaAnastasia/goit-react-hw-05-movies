@@ -20,7 +20,6 @@ const Search = () => {
   const [films, setFilms] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('search');
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!query) {
@@ -29,12 +28,11 @@ const Search = () => {
     fetchSearch(query).then(response => {
       if (response.data.results.length === 0) {
         Notify.warning('Oppps.. bad query');
-        navigate('/search');
         return;
       }
       setFilms(response.data.results);
     });
-  }, [query, navigate]);
+  }, [query]);
 
   const handlerSubmit = event => {
     event.preventDefault();

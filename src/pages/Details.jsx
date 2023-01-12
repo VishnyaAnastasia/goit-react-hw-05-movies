@@ -15,12 +15,11 @@ const Details = () => {
   useEffect(() => {
     fetchDetails(id).then(response => {
       if (!response) {
-        navigate('/search');
         return;
       }
       setFilm(response.data);
     });
-  }, [id, navigate]);
+  }, [id]);
 
   return (
     film && (
