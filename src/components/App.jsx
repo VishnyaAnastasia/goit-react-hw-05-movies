@@ -14,16 +14,18 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 export const App = () => {
   return (
     <>
-      <Nav />
       <Suspense fallback={<Loader />}>
+        <Nav />
         <Routes>
-          <Route path="/" element={<Tranding />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/search/:id" element={<Details />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+          <Route path="/">
+            <Route index element={<Tranding />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/search/:id" element={<Details />}>
+              <Route path="cast" element={<Cast />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </>

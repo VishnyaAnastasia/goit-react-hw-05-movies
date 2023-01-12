@@ -8,10 +8,7 @@ export const Film = ({ film }) => {
   return (
     <>
       <div className={styles.btnSection}>
-        <Link
-          className={styles.btnBack}
-          to={location.state ? location.state.from : '/'}
-        >
+        <Link className={styles.btnBack} to={location.state?.from ?? '/'}>
           Back
         </Link>
 

@@ -13,9 +13,7 @@ export const FilmsList = ({ films }) => {
           <Link
             to={`/search/${film.id}`}
             state={{
-              from: location.search
-                ? location.pathname + location.search
-                : location.pathname,
+              from: location,
             }}
           >
             <img
